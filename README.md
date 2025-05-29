@@ -1,6 +1,6 @@
 # Gerador de QR Code com Sugestões de Viagem e Imagens Temáticas
 
-![Banner do Projeto - Exemplo visual do gerador de QR Code com sugestão de viagem e imagem](/15_proj_gerador_code__/img/ProjetoQR.png)
+![Banner do Projeto - Exemplo visual do gerador de QR Code com sugestão de viagem e imagem](/img/ProjetoQR.png)
 
 Este projeto é um Gerador de QR Code interativo e moderno, desenvolvido para uma experiência de usuário aprimorada. Além de gerar QR Codes a partir de texto ou URLs, ele oferece sugestões aleatórias de destinos turísticos mundiais, acompanhadas de imagens temáticas vibrantes.
 
@@ -47,4 +47,5 @@ Contribuições são bem-vindas! Se você tiver sugestões de melhorias, correç
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a licença MIT. Veja o arquivo (LICENSE) para mais detalhes.
+Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](/LICENSE.md) para mais detalhes.
+
