@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* PROPRIEDADES PARA A IMAGEM DE FUNDO */
+  background-image: url('../img/back.jpg'); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.container {
+  background-color: #fff;
+  height: 260px;
+  width: 400px;
+  border-radius: 10px;
+  padding: 20px;
+  transition: height 0.3s ease, padding-bottom 0.3s ease; 
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; 
+}
+
+.container.active {
+  padding-bottom: 20px; 
+}
+
+#qr-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#qr-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#qr-header p {
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.container #qr-form {
+  margin: 20px 15px; 
+}
+
+#qr-form input,
+#qr-form button {
+  width: 100%;
+  height: 55px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+#qr-form input {
+  border: 1px solid #777;
+  padding: 10px 15px;
+}
+
+/* --- ESTILOS DO BOTÃO GERAR QR CODE (NEON COM GRADIENTE) --- */
+#qr-form button {
+  /* Gradiente de cor neon da esquerda para a direita */
+  background: linear-gradient(to right, #00FFFF, #FF00FF); /* Azul/Ciano para Rosa/Magenta */
+  margin-top: 20px;
+  color: #fff; /* Texto branco para contraste */
+  font-size: 1.2rem;
+  font-weight: bold; /* Deixar o texto mais visível */
+  cursor: pointer;
+  opacity: 1; /* Garantir opacidade total para o brilho */
+  /* Ajuste a transição para todas as propriedades que mudam no hover */
+  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+  
+  /* Efeito de brilho neon: combine sombras das duas cores principais */
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.7), /* Brilho ciano */
+              0 0 15px rgba(255, 0, 255, 0.7); /* Brilho magenta */
+}
+
+#qr-form button:hover {
+  /* Gradiente levemente diferente ou deslocado no hover */
+  background: linear-gradient(to right, #00CFFF, #E600E6); /* Tonalidades um pouco diferentes */
+  transform: translateY(-2px); /* Efeito sutil de "levantar" */
+
+  /* Intensifica o brilho no hover */
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.9), 
+              0 0 20px rgba(0, 255, 255, 0.9),
+              0 0 10px rgba(255, 0, 255, 0.9),
+              0 0 20px rgba(255, 0, 255, 0.9),
+              0 0 30px rgba(0, 255, 255, 0.5), /* Um brilho mais espalhado para o efeito "aura" */
+              0 0 30px rgba(255, 0, 255, 0.5); 
+}
+/* --- FIM DOS ESTILOS DO BOTÃO GERAR QR CODE (NEON COM GRADIENTE) --- */
+
+.container #qr-code {
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 15px 15px 20px 15px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: opacity 0.5s; 
+}
+
+.container.active #qr-code {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- Estilos para o container de sugestões --- */
+#suggestions-container {
+  text-align: center;
+  margin: 0 15px;
+  padding-top: 15px;
+  border-top: 1px dashed #ccc; 
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1; 
+}
+
+.container.active #suggestions-container {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#suggestions-container p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+#suggestions-container p strong {
+  /* Poderia ajustar esta cor para algo que combine com o neon, ex: #E600E6 (rosa neon) ou #00CFFF (azul neon) */
+  color: #086824; 
+  font-weight: bold;
+}
+
+/* Estilos para a imagem da sugestão */
+.suggestion-image {
+    max-width: 100%;
+    height: 180px; 
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    margin-bottom: 0;
+    display: block;
+}
